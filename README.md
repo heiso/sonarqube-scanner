@@ -5,7 +5,10 @@ Its only purpose is to scan a project codebase and send results to a living Sona
 The default sonar-scanner version used is 3.2.0.1227
 
 # Usage
+This image will expose sonar-scanner from https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner so you can use any command sonar-scanner could use.
+
 Simple example
+
 ```
 docker run \
   -v (pwd):/mnt/app \
@@ -17,6 +20,7 @@ docker run \
 ```
 
 Example with a sonar-scanner.properties
+
 ```
 docker run \
   -v $(pwd):/mnt/app \
@@ -25,6 +29,7 @@ docker run \
 ```
 
 It's also possible to use another version of sonar-scanner by setting the VERSION environment variable
+
 ```
 docker run \
   -v $(pwd):/mnt/app \
