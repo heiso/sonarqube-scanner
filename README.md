@@ -8,11 +8,11 @@ The default sonar-scanner version used is 3.2.0.1227
 Simple example
 ```
 docker run \
-  -v $(pwd):/mnt/app \
+  -v (pwd):/mnt/app \
   heiso/sonarqube-scanner \
-  -Dsonar.host.url=https://my.sonarqube.server
-  -Dsonar.projectKey=myProject
-  -Dsonar.sources=./src
+  -Dsonar.host.url=https://my.sonarqube.server \
+  -Dsonar.projectKey=myProject \
+  -Dsonar.sources=./src \
   -Dsonar.login=<token>
 ```
 
@@ -28,7 +28,7 @@ It's also possible to use another version of sonar-scanner by setting the VERSIO
 ```
 docker run \
   -v $(pwd):/mnt/app \
-  -e VERSION=<version number>
+  -e VERSION=<version number> \
   heiso/sonarqube-scanner \
   -Dproject.settings=/mnt/app/sonar-scanner.properties
 ```
