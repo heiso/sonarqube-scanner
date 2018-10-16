@@ -1,4 +1,6 @@
+[![Build Status](https://travis-ci.org/heiso/sonarqube-scanner.svg?branch=master)](https://travis-ci.org/heiso/sonarqube-scanner)
 
+[Docker Hub - sonarqube-scanner](https://hub.docker.com/r/heiso/sonarqube-scanner)
 
 **This docker image do not include a sonarqube server.**
 Its only purpose is to scan a project codebase and send results to a living Sonarqube server.
