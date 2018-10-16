@@ -19,13 +19,13 @@ docker run \
   -Dsonar.login=<token>
 ```
 
-Example with a sonar-scanner.properties
+Example with a sonar-project.properties
 
 ```
 docker run \
   -v $(pwd):/mnt/app \
   heiso/sonarqube-scanner \
-  -Dproject.settings=/mnt/app/sonar-scanner.properties
+  -Dproject.settings=/mnt/app/sonar-project.properties
 ```
 
 It's also possible to use another version of sonar-scanner by setting the VERSION environment variable
@@ -35,5 +35,5 @@ docker run \
   -v $(pwd):/mnt/app \
   -e VERSION=<version number> \
   heiso/sonarqube-scanner \
-  -Dproject.settings=/mnt/app/sonar-scanner.properties
+  -Dproject.settings=/mnt/app/sonar-project.properties
 ```

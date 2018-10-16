@@ -6,6 +6,6 @@ RUN apk add --no-cache wget nodejs && \
     wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${VERSION}.zip && \
     unzip sonar-scanner-cli-${VERSION}
 
-WORKDIR /sonar-scanner-${VERSION}/bin
+RUN ln -s /sonar-scanner-${VERSION}/bin/sonar-scanner /usr/bin
 
-ENTRYPOINT [ "./sonar-scanner" ]
+ENTRYPOINT [ "sonar-scanner" ]
