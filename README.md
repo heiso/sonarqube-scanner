@@ -9,9 +9,9 @@ This image will expose sonar-scanner from https://docs.sonarqube.org/display/SCA
 
 Simple example
 
-```
+```bash
 docker run \
-  -v (pwd):/mnt/app \
+  -v $(pwd):/mnt/app \
   heiso/sonarqube-scanner \
   -Dsonar.host.url=https://my.sonarqube.server \
   -Dsonar.projectKey=myProject \
@@ -21,7 +21,7 @@ docker run \
 
 Example with a sonar-project.properties
 
-```
+```bash
 docker run \
   -v $(pwd):/mnt/app \
   heiso/sonarqube-scanner \
@@ -30,7 +30,7 @@ docker run \
 
 It's also possible to use another version of sonar-scanner by setting the VERSION environment variable
 
-```
+```bash
 docker run \
   -v $(pwd):/mnt/app \
   -e VERSION=<version number> \
