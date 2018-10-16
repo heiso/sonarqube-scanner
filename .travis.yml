@@ -1,0 +1,16 @@
+services:
+  - docker
+
+before_deploy:
+  - docker build --tag "$TRAVIS_REPO_SLUG" .
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+  
+deploy:
+  - provider: script
+    script: docker tag "$TRAVIS_REPO_SLUG" "${TRAVIS_REPO_SLUG}:${TRAVIS_BRANCH}" && docker push "${TRAVIS_REPO_SLUG}:${TRAVIS_BRANCH}"
+    on: 
+      all_branches: true
+  - provider: script
+    script: docker tag "$TRAVIS_REPO_SLUG" "${TRAVIS_REPO_SLUG}:latest" && docker push "${TRAVIS_REPO_SLUG}:latest"
+    on: 
+      tags: true
